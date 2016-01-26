@@ -1,33 +1,93 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>CSS/HTML Workshop with Drivy</title>
-  </head>
-  <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
-      {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
-        </div>
-      {{/actors}}
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
-    <script src="drivy.js"></script>
-    <script src="index.js"></script>
-  </body>
+	<head>
+	<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+	<body>
+	<!-- Uses a transparent header that draws on top of the layout's background -->
+	<!-- Always shows a header, even in smaller screens. -->
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		  <header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+			  <!-- Title -->
+			  <span class="mdl-layout-title">DRIVY : Rent a car</span>
+			  <!-- Add spacer, to align navigation to the right -->
+			  <div class="mdl-layout-spacer"></div>
+			  <!-- Navigation. We hide it in small screens. -->
+			</div>
+		  </header>
+		  <div class="mdl-layout__drawer">
+			<span class="mdl-layout-title">DRIVY : Rent a car</span>
+			<nav class="mdl-navigation">
+			  <a class="mdl-navigation__link" href="">Link1</a>
+			  <a class="mdl-navigation__link" href="">Link2</a>
+			  <a class="mdl-navigation__link" href="">Link3</a>
+			  <a class="mdl-navigation__link" href="">Link4</a>
+			</nav>
+		  </div>
+		  <main class="mdl-layout__content">
+			<div class="page-content">
+				<div class="mdl-grid">
+				<div class="mdl-cell mdl-cell--1-col">Car Informations : </div>
+					<div class="mdl-cell mdl-cell--4-col" id="car">	
+						<form action="#">
+						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input drivy-model" type="text" id="model">
+							<label class="mdl-textfield__label" for="model">Car Model</label>
+						  </div>
+						</form>
+						<form action="#">
+						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input drivy-dayPrice" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="price-by-day">
+							<label class="mdl-textfield__label" for="price-by-day">Price by day</label>
+							<span class="mdl-textfield__error">Input is not a number!</span>
+						  </div>
+						</form>
+						<form action="#">
+						  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+							<input class="mdl-textfield__input drivy-priceKm" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="price-by-km">
+							<label class="mdl-textfield__label" for="price-by-km">Price by km</label>
+							<span class="mdl-textfield__error">Input is not a number!</span>
+						  </div>
+						</form>
+					</div>
+				</div>
+				
+				<div class="mdl-grid">
+					<div class="mdl-cell mdl-cell--1-col">Rental Informations : </div>
+					<div class="mdl-cell mdl-cell--4-col" id="rental">
+						<input class="begin" type="date" placeholder="Rental begin date"/>
+						<input class="end" type="date" placeholder="Rental end date"/>
+						<input class="distance" type="number" placeholder="Distance in km"/>
+						<input class="option" type="checkbox" placeholder="Deductible option"/>
+					</div>
+				</div>
+				
+				
+				<!-- Colored raised button -->
+				<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="compute">
+				  Compute
+				</button>			
+				
+				<div id="actors"></div>
+				<script id="template" type="x-tmpl-mustache">
+				  {{#actors}}
+					<div class="actor">
+					  <span>{{who}}</span>
+					  <span>{{type}}</span>
+					  <span>{{amount}}</span>
+					</div>
+				  {{/actors}}
+				</script>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+				<script src="drivy.js"></script>
+				<script src="index.js"></script>
+				
+				
+			</div>
+		  </main>
+		</div>
+	</body>
 </html>

@@ -13,9 +13,9 @@ DRIVY = (function namespace () {
    */
   var getCar = function getCar () {
     return {
-      'model': document.querySelector('#car .model').value,
-      'pricePerDay': document.querySelector('#car .price-by-day').value,
-      'pricePerKm': document.querySelector('#car .price-by-km').value
+      'model': document.querySelector('#car .drivy-model').value,
+      'pricePerDay': document.querySelector('#car .drivy-dayPrice').value,
+      'pricePerKm': document.querySelector('#car .drivy-priceKm').value
     };
   };
 
