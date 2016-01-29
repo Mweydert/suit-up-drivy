@@ -20,8 +20,8 @@ var DRIVY = DRIVY || {};
     var car = DRIVY.getCar();
     var begin = document.querySelector('.begin').value;
     var end = document.querySelector('.end').value;
-    var distance = document.querySelector('.distance').value;
-    var option = document.querySelector('.option').value;
+    var distance = document.querySelector('.drivy-distance').value;
+    var option = document.querySelector('.drivy-option').value;
 
     var actors = DRIVY.payActors(car, begin, end, distance, option);
 

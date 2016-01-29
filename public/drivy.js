@@ -111,24 +111,24 @@ DRIVY = (function namespace () {
 
     var actors = [{
       'who': 'driver',
-      'type': 'debit',
-      'amount': price + deductibleOption
+      'type': 'debit = ',
+      'amount': price + deductibleOption + " euros"
     }, {
       'who': 'owner',
-      'type': 'credit',
-      'amount': price - commission.value
+      'type': 'credit = ',
+      'amount': price - commission.value + " euros"
     }, {
       'who': 'insurance',
-      'type': 'credit',
-      'amount': commission.insurance
+      'type': 'credit = ',
+      'amount': commission.insurance + " euros"
     }, {
       'who': 'assistance',
-      'type': 'credit',
-      'amount': commission.assistance
+      'type': 'credit = ',
+      'amount': commission.assistance + " euros"
     }, {
       'who': 'drivy',
-      'type': 'credit',
-      'amount': commission.drivy + deductibleOption
+      'type': 'credit = ',
+      'amount': commission.drivy + deductibleOption + " euros"
     }];
 
     return actors;

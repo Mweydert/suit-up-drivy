@@ -4,19 +4,21 @@ height:auto;
 }
 
 #esilvPic{
-margin-left:140px;
+margin-top:40px;
+margin-left:250px;
 width:100px;
 height:auto;
 }
 
 #compute{
-margin-left:100px;
+margin-left:150px;
 margin-top:30px;
 width:200px;
 height:50px; 
 }
 
 #actors{
+line-height:40px;
 font-size:150%;	
 margin-left:150px;
 margin-top:50px;
@@ -25,7 +27,7 @@ margin-bottom:50px;
 
 .welcome{
 font-size:350%;	
-margin:100px;
+margin-left:100px;
 color:red;
 }
 
